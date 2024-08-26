@@ -26,12 +26,12 @@ sap.ui.define([
                     return;
                 }
 
-                var batchSize = 1000; // Define batch size
+                var batchSize = 2000; // Define batch size
                 var totalBatches = Math.ceil(totalRecords / batchSize);
-                var chunkSize = 500; // Define chunk size for updating progress
+                var chunkSize = 1000; // Define chunk size for updating progress
 
                 function updateProgressDialog(currentRecord, totalRecords, oDialog) {
-                    oDialog.getContent()[0].setText("Processing record " + currentRecord + " of " + totalRecords + "...");
+                    oDialog.getContent()[0].setText("Processing record " + currentRecord + " /" + totalRecords + "...");
                 }
 
                 function processChunk(batchNumber, start, end, totalRecords, chunkStart, oDialog) {
